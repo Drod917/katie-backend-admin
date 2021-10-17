@@ -1,0 +1,75 @@
+.header {
+  background-color: rebeccapurple;
+  max-width: 100vw;
+}
+
+.header__wrap {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  margin: 0 auto;
+  max-width: 640px;
+}
+
+.header__heading {
+  margin: 0;
+  font-size: 1.5rem;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none;
+}
+
+.header__nav {
+  font-size: 1rem;
+  text-align: right;
+  margin: 0;
+  padding: 10px;
+}
+
+.header__link {
+  color: white;
+  font-weight: bold;
+  margin-left: 0.75rem;
+  margin-top: 0;
+  padding: 0.25rem;
+  text-decoration: none;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none;
+}
+
+.header__link--home {
+  margin-left: -0.25rem;
+}
+
+.header__link:hover,
+.header__link:active,
+.header__link:focus {
+  background: white;
+  color: rebeccapurple;
+}
+
+@media only screen and (min-width: 450px) {
+  .header__wrap {
+    flex-flow: row nowrap;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+
+  .header__heading {
+    font-size: 2rem;
+  }
+
+  .header__nav {
+    font-size: 1.25rem;
+  }
+}

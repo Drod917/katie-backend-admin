@@ -1,0 +1,59 @@
+{
+  "name": "gatsby-event-booking",
+  "private": true,
+  "description": "A simple event-booking app with graphql authentication and mongodb",
+  "version": "0.1.0",
+  "author": "Babak Chehraz <babak.chehraz@gmail.com>",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
+    "chart.js": "^1.1.1",
+    "gatsby": "^2.13.61",
+    "gatsby-image": "^2.2.6",
+    "gatsby-plugin-manifest": "^2.2.8",
+    "gatsby-plugin-netlify": "^2.1.8",
+    "gatsby-plugin-offline": "^2.2.4",
+    "gatsby-plugin-react-helmet": "^3.1.2",
+    "gatsby-plugin-sharp": "^2.2.16",
+    "gatsby-plugin-styled-components": "^3.1.2",
+    "gatsby-source-filesystem": "^2.1.6",
+    "gatsby-transformer-sharp": "^2.2.10",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-awesome-button": "^6.0.0",
+    "react-chartjs": "^1.2.0",
+    "react-datepicker": "^2.9.3",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^5.2.1",
+    "react-icons": "^3.7.0",
+    "react-switch": "^5.0.1",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.1.0",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-react": "^7.14.3",
+    "gatsby-plugin-eslint": "^2.0.5",
+    "prettier": "^1.18.2"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bchehraz/gatsby-event-booking"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}
