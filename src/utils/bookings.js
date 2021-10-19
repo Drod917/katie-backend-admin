@@ -18,7 +18,7 @@ export const fetchBookings = async (token) => {
   };
 
   try {
-    const response = await fetch('http://localhost:8001/graphql', {
+    const response = await fetch('http://localhost:8002/graphql', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {
@@ -63,7 +63,7 @@ export const cancelBooking = async (token, bookingId) => {
   }
 
   try {
-    const response = await fetch('http://localhost:8001/graphql', {
+    const response = await fetch('http://localhost:8002/graphql', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {

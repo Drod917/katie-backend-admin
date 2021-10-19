@@ -42,12 +42,11 @@ export const createEvent = async (token, event) => {
   };
 
   try {
-    const response = await fetch('http://localhost:8001/graphql', {
+    const response = await fetch('http://localhost:8002/graphql', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + token,
       }
     });
 
@@ -91,7 +90,7 @@ export const fetchEvents = async (filterOnlyFree = false) => {
   };
 
   try {
-    const response = await fetch('http://localhost:8001/graphql', {
+    const response = await fetch('http://localhost:8002/graphql', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {
@@ -130,7 +129,7 @@ export const bookEvent = async (token, eventId) => {
   };
 
   try {
-    const response = await fetch('http://localhost:8001/graphql', {
+    const response = await fetch('http://localhost:8002/graphql', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {

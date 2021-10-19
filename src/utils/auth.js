@@ -43,7 +43,7 @@ export const logout = callback => {
 }
 
 const callAuthAPI = async (requestBody) => {
-  return await fetch('http://localhost:8001/graphql', {
+  return await fetch('http://localhost:8002/graphql', {
     method: 'POST',
     body: JSON.stringify(requestBody),
     headers: {
