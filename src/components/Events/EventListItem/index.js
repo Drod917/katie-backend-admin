@@ -53,7 +53,7 @@ const EventListItem = props => (
       <h2>${props.price} - {new Date(props.date).toLocaleDateString()}</h2>
     </div>
     <div>
-      {
+      {/* {
         (props.userId === props.creatorId)
           ? <p>{`Event Owner`}</p>
           : <button
@@ -62,7 +62,13 @@ const EventListItem = props => (
             >
               {`Details`}
             </button>
-      }
+      } */}
+      <button
+              className={formStyles[`form__button`]}
+              onClick={props.onDetail.bind(this, props.eventId)}
+            >
+              {`Details`}
+            </button>
     </div>
   </StyledEventListItem>
 );
