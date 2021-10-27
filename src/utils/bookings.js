@@ -1,20 +1,135 @@
 import { isResponseOk, isBrowser } from './helpers';
 
-export const fetchBookings = async (token) => {
+const isValidBooking = (booking) => {
+  const { fullname, phone, date, service, comment } = booking;
+  return !(fullname.trim().length === 0 ||
+      phone.trim().length === 0 ||
+      date.trim().length === 0 ||
+      service.trim().length === 0 ||
+      comment.trim().length === 0);
+}
+
+export const createBooking = async (token, booking) => {
+  if (!isBrowser) return false;
+
+  if (!isValidBooking(booking)) {
+    return false;
+  }
+
   const requestBody = {
     query: `
-      query {
-        bookings {
+      mutation CreateBooking(
+          $fullname: String!,
+          $phone: String!,
+          $date: String!,
+          $service: String!,
+          $comment: String!,
+        ) {
+        createBooking(bookingInput: {
+          fullname: $fullname,
+          phone: $phone,
+          date: $date,
+          service: $service,
+          comment: $comment
+        }) {
           _id
-          createdAt
-          event {
-            title
-            date
-            price
-          }
+          fullname
+          phone
+          date
+          service
+          comment
+          confirmed
         }
       }
-    `
+    `,
+    variables: {
+      ...booking
+    }
+  };
+
+  try {
+    const response = await fetch('http://localhost:8002/graphql', {
+      method: 'POST',
+      body: JSON.stringify(requestBody),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+
+    if (!isResponseOk(response)) {
+      throw new Error('Create Booking Failed!');
+    }
+
+    let { data } = await response.json();
+    // There may be an edge case where there's a failing client token
+    if (!data.createBooking) {
+      console.log("Authentication Error");
+      return false;
+    }
+    return { ...data.createBooking };
+  } catch (e) {
+    console.log(e);
+    return false;
+  }
+}
+
+export const fetchBookings = async (filterConfirmed) => {
+  const requestBody = {
+    query: `
+      query Bookings($confirmed: Boolean) {
+        bookings(confirmed: $confirmed) {
+          _id
+          fullname
+          phone
+          date
+          service
+          comment
+          confirmed
+        }
+      }
+    `,
+    variables: {
+      confirmed: filterConfirmed,
+    }
+  };
+
+  try {
+    const response = await fetch('http://localhost:8002/graphql', {
+      method: 'POST',
+      body: JSON.stringify(requestBody),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+
+    if (!isResponseOk(response)) {
+      throw new Error('Fetch Bookings Failed!');
+    }
+
+    const { data } = await response.json();
+    return data.bookings;
+  } catch (e) {
+    console.log(e);
+    return false;
+  }
+}
+
+export const confirmBooking = async (token, bookingId) => {
+  if (!isBrowser) return false;
+
+  const requestBody = {
+    query: `
+      mutation ConfirmBooking($bookingId: ID!) {
+        confirmBooking(bookingId: $bookingId) {
+          _id
+          createdAt
+          updatedAt
+        }
+      }
+    `,
+    variables: {
+      bookingId
+    }
   };
 
   try {
@@ -28,39 +143,36 @@ export const fetchBookings = async (token) => {
     });
 
     if (!isResponseOk(response)) {
-      throw new Error('Fetch Bookings Failed!');
+      throw new Error('Confirm Booking Failed!');
     }
 
     const { data } = await response.json();
-    const { bookings } = data;
 
-    if (!bookings) {
-      return false;
-    }
-
-    return bookings;
+    if (!data.confirmBooking) return false;
+    return true;
   } catch (e) {
     console.log(e);
     return false;
   }
 }
 
-export const cancelBooking = async (token, bookingId) => {
+export const deleteBooking = async (token, bookingId) => {
   if (!isBrowser) return false;
 
   const requestBody = {
     query: `
-      mutation CancelBooking($bookingId: ID!) {
-        cancelBooking(bookingId: $bookingId) {
+      mutation DeleteBooking($bookingId:ID!){
+        deleteBooking(bookingId:$bookingId) {
           _id
-          title
+          createdAt
+          updatedAt
         }
       }
     `,
     variables: {
       bookingId
     }
-  }
+  };
 
   try {
     const response = await fetch('http://localhost:8002/graphql', {
@@ -73,15 +185,12 @@ export const cancelBooking = async (token, bookingId) => {
     });
 
     if (!isResponseOk(response)) {
-      throw new Error('Cancel Booking Failed!');
+      throw new Error('Delete Booking Failed!');
     }
 
     const { data } = await response.json();
 
-    if (!data.cancelBooking.title) {
-      return false;
-    }
-
+    if (!data) return false;
     return true;
   } catch (e) {
     console.log(e);

@@ -15,7 +15,7 @@ const StyledSpan = styled.span`
 
 const CustomSwitch = ({ onChange, checked }) => (
   <StyledLabel>
-    <StyledSpan>{`Show Only Free Events`}</StyledSpan>
+    <StyledSpan>{`Show Only Confirmed Bookings`}</StyledSpan>
     <Switch
       onChange={onChange}
       checked={checked}

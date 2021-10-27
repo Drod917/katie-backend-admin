@@ -15,16 +15,16 @@ const Header = () => (
                 styles[`header__link--home`]
               }`}
             >
-              {`Gatsby Booking`}
+              {`Gatsby Events`}
             </Link>
           </h1>
           <nav role="main" className={styles[`header__nav`]}>
-            <Link to="/app/bookings" className={styles[`header__link`]}>
-              Bookings
+            <Link to="/app/events" className={styles[`header__link`]}>
+              Events
             </Link>
-            {/* {context.token && <Link to="/app/bookings" className={styles[`header__link`]}>
+            {context.token && <Link to="/app/bookings" className={styles[`header__link`]}>
               Bookings
-            </Link>} */}
+            </Link>}
           </nav>
         </div>
       </header>

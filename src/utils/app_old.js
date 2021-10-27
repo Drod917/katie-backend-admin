@@ -6,10 +6,11 @@ import Login from '../components/Login';
 import PrivateRoute from '../components/PrivateRoute';
 
 import Home from '../components/Home';
+import Events from '../components/Events';
 import Bookings from '../components/Bookings';
 import Status from '../components/Status';
 import AuthContext from '../context/auth-context';
-import { isLoggedIn, onLoginSuccess } from '../utils/auth.js';
+import { isLoggedIn, onLoginSuccess } from './auth.js';
 
 class App extends React.Component {
   state = {
@@ -47,9 +48,11 @@ class App extends React.Component {
         <Layout>
           <Status />
           <Router>
-            {this.state.token && <Redirect from="/app/login" to="/app/bookings" exact noThrow />}
-            {this.state.token && <Redirect from="/app/sign-up" to="/app/bookings" exact noThrow />}
-            <PrivateRoute path="/app/bookings" component={Bookings}/>
+            {this.state.token && <Redirect from="/app/login" to="/app/events" exact noThrow />}
+            {this.state.token && <Redirect from="/app/sign-up" to="/app/events" exact noThrow />}
+
+            <PrivateRoute path="/app/bookings" component={Bookings} />
+            <Events path="/app/events" />
             <Login signUp={false} path="/app/login" />
             <Login signUp path="/app/sign-up" />
             <Home path="/" exact />

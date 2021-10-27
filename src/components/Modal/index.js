@@ -6,7 +6,7 @@ import styles from './modal.module.css';
 const Modal = props => (
   <div className={styles[`modal`]}>
     <section className={styles[`modal__content`]}>
-      <h2>New Event</h2>
+      <h2>{props.title}</h2>
       {props.children}
     </section>
     <section className={styles[`modal__actions`]}>
