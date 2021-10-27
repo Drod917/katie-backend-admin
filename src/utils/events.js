@@ -77,10 +77,6 @@ export const fetchEvents = async (filterOnlyFree = false) => {
           description
           price
           date
-          creator {
-            _id
-            email
-          }
         }
       }
     `,

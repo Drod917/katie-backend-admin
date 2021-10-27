@@ -91,9 +91,9 @@ class Events extends React.Component {
         description: description,
         price: price,
         date: date,
-        creator: {
-          _id: this.context.userId
-        },
+        // creator: {
+        //   _id: this.context.userId
+        // },
       });
       // Sort events by date before updating the state
       updatedEvents = this.sortEventsByDate(updatedEvents);

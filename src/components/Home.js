@@ -12,6 +12,7 @@ const Home = () => (
     }}
   >
     <h4>By Babak Chehraz</h4>
+    <h4>Fork Developed by Daniel Rodriguez</h4>
     <br />
     <p>
       [<a target="_blank" rel="noopener noreferrer" href="https://www.github.com/bchehraz/gatsby-event-booking">View Front-end on Github</a>]

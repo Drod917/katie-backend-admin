@@ -8,6 +8,7 @@
 </h1>
 
 <h4>Author: Babak Chehraz</h4>
+<h4>Fork Developed by Daniel Rodriguez</h4>
 <p>
   [<a target="blank" href="https://gatsby-event-booking.netlify.com/">Full Demo, Hosted by Netlify</a>]
   [<a target="blank" href="https://github.com/bchehraz/graphql-event-booking">Backend API built with GraphQL and MongoDB</a>]
