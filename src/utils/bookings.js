@@ -21,6 +21,7 @@ export const createBooking = async (token, booking) => {
       mutation CreateBooking(
           $fullname: String!,
           $phone: String!,
+          $email: String!,
           $date: String!,
           $service: String!,
           $comment: String!,
@@ -28,6 +29,7 @@ export const createBooking = async (token, booking) => {
         createBooking(bookingInput: {
           fullname: $fullname,
           phone: $phone,
+          email: $email,
           date: $date,
           service: $service,
           comment: $comment
@@ -35,6 +37,7 @@ export const createBooking = async (token, booking) => {
           _id
           fullname
           phone
+          email
           date
           service
           comment
@@ -81,6 +84,7 @@ export const fetchBookings = async (filterConfirmed) => {
           _id
           fullname
           phone
+          email
           date
           service
           comment

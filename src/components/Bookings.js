@@ -20,9 +20,13 @@ class Bookings extends React.Component {
 
     this.state = {
       fullname: '',
-      description: '',
-      price: '',
+      phone: '',
+      email: '',
       date: '',
+      service: '',
+      comment: '',
+      confirmed: '',
+      
       creating: false,
       bookings: [],
       isLoading: false,
@@ -120,7 +124,7 @@ class Bookings extends React.Component {
 
     this.setState({ creating: false, selectedBooking: null, deleting: false });
     this.getBookings();
-  };
+  }
 
   async confirmBookingHandler() {
     const { token } = this.context;
@@ -160,6 +164,7 @@ class Bookings extends React.Component {
           >
             <h2>{this.state.selectedBooking.service} - {new Date(this.state.selectedBooking.date).toLocaleDateString()}</h2>
             <p>{this.state.selectedBooking.phone}</p>
+            <p>{this.state.selectedBooking.email}</p>
             <p>{this.state.selectedBooking.comment}</p>
           </Modal>
         }
@@ -174,6 +179,7 @@ class Bookings extends React.Component {
           >
             <h2>{this.state.selectedBooking.service} - {new Date(this.state.selectedBooking.date).toLocaleDateString()}</h2>
             <p>{this.state.selectedBooking.phone}</p>
+            <p>{this.state.selectedBooking.email}</p>
             <p>{this.state.selectedBooking.comment}</p>
           </Modal>
         }

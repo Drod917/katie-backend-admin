@@ -19,6 +19,7 @@ const BookingsList = props => {
         bookingId={booking._id}
         fullname={booking.fullname}
         phone={booking.phone}
+        email={booking.email}
         date={booking.date}
         service={booking.service}
         comment={booking.comment}

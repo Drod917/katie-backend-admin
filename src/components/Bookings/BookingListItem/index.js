@@ -82,6 +82,7 @@ const BookingListItem = props => (
 BookingListItem.propTypes = {
   bookingId: PropTypes.string.isRequired,
   fullname: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   service: PropTypes.string.isRequired,
