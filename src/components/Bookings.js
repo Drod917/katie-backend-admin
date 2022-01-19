@@ -148,7 +148,7 @@ class Bookings extends React.Component {
 
   render() {
     return (
-      <View title="Bookings">
+      <View title={this.state.checked ? "Confirmed Bookings" : "Queued Bookings"}>
         <CustomSwitch
           onChange={this.handleChange}
           checked={this.state.checked}
@@ -157,7 +157,7 @@ class Bookings extends React.Component {
           <Modal
             title={this.state.selectedBooking.fullname}
             canCancel
-            canConfirm
+            canConfirm={this.state.checked ? false : true}
             onCancel={this.onCancelAction}
             onConfirm={this.confirmBookingHandler}
             confirmText={this.context.token ? "Confirm This Booking" : "Confirm"}

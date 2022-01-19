@@ -1,5 +1,9 @@
 .header {
+<<<<<<< HEAD
   background-color: #212529;
+=======
+  background-color: #1b263b;
+>>>>>>> 36ccfb50b349fd49906ce0d749b6a00dc67a35c4
   max-width: 100vw;
 }
 
@@ -54,7 +58,11 @@
 .header__link:active,
 .header__link:focus {
   background: white;
+<<<<<<< HEAD
   color: #212529;
+=======
+  color: #1b263b;
+>>>>>>> 36ccfb50b349fd49906ce0d749b6a00dc67a35c4
 }
 
 @media only screen and (min-width: 450px) {

@@ -51,7 +51,7 @@ export const createBooking = async (token, booking) => {
   };
 
   try {
-    const response = await fetch('http://localhost:8002/graphql', {
+    const response = await fetch('https://katie-backend.herokuapp.com/graphql', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {
@@ -98,7 +98,7 @@ export const fetchBookings = async (filterConfirmed) => {
   };
 
   try {
-    const response = await fetch('http://localhost:8002/graphql', {
+    const response = await fetch('https://katie-backend.herokuapp.com/graphql', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {
@@ -137,7 +137,7 @@ export const confirmBooking = async (token, bookingId) => {
   };
 
   try {
-    const response = await fetch('http://localhost:8002/graphql', {
+    const response = await fetch('https://katie-backend.herokuapp.com/graphql', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {
@@ -179,7 +179,7 @@ export const deleteBooking = async (token, bookingId) => {
   };
 
   try {
-    const response = await fetch('http://localhost:8002/graphql', {
+    const response = await fetch('https://katie-backend.herokuapp.com/graphql', {
       method: 'POST',
       body: JSON.stringify(requestBody),
       headers: {

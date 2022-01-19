@@ -15,12 +15,20 @@ const Header = () => (
                 styles[`header__link--home`]
               }`}
             >
+<<<<<<< HEAD
               {`Queue`}
+=======
+              {`Booking App`}
+>>>>>>> 36ccfb50b349fd49906ce0d749b6a00dc67a35c4
             </Link>
           </h1>
           <nav role="main" className={styles[`header__nav`]}>
             <Link to="/app/bookings" className={styles[`header__link`]}>
+<<<<<<< HEAD
               {`Bookings`}
+=======
+              View Bookings
+>>>>>>> 36ccfb50b349fd49906ce0d749b6a00dc67a35c4
             </Link>
             {/* {context.token && <Link to="/app/bookings" className={styles[`header__link`]}>
               Bookings
