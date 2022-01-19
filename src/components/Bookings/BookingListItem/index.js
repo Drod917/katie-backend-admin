@@ -7,7 +7,7 @@ import formStyles from '../../Form/form.module.css';
 const StyledBookingListItem = styled.li`
   margin: 0;
   padding: 1rem;
-  border: 3px solid #663399;
+  border: 3px solid #212529;
   border-left-width: 1px;
   border-right-width: 1px;
   border-top: none;
@@ -18,13 +18,13 @@ const StyledBookingListItem = styled.li`
   h1 {
     margin: 0;
     font-size: 1rem;
-    color: #663399;
+    color: #212529;
   }
 
   h2 {
     margin: 0;
     font-size: 0.75rem;
-    color: #7c7c7c;
+    color: #212529;
   }
 
   p {
@@ -32,7 +32,7 @@ const StyledBookingListItem = styled.li`
   }
 
   :first-child {
-    border-top: 3px solid #663399;
+    border-top: 3px solid #212529;
   }
 
   @media only screen and (min-width: 500px) {

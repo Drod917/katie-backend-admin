@@ -19,7 +19,7 @@ const CustomSwitch = ({ onChange, checked }) => (
     <Switch
       onChange={onChange}
       checked={checked}
-      onColor={'#663399'}
+      onColor={'#212529'}
       uncheckedIcon={false}
       checkedIcon={false}
       height={32}
